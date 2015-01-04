@@ -5,21 +5,20 @@ import json
 def search(arg):
     
 # arg contains a dict with a single key:value
-# locus is AGI identifier and is mandatory
+# term is PO accession term and is mandatory
     
-    # Return nothing if client didn't pass in a locus parameter
-    if not ('locus' in arg):
+    # Return nothing if client didn't pass in a term parameter
+    if not ('term' in arg):
        return
     
     # Validate against a regular expression
-    locus = arg['locus']
-    locus = locus.upper()
-    p = re.compile('AT[1-5MC]G[0-9]{5,5}', re.IGNORECASE)
-    if not p.search(locus):
+    term = arg['term']
+    #term = term.upper()
+    p = re.compile('[A-Z,a-z,0-9]', re.IGNORECASE)
+    if not p.search(term):
        return
 
-    param = '[{%22agi%22:%22' + locus + '%22}]'
-    r = requests.get('http://www.gabipd.org/services/rest/mapman/bin?request=' + param)
+    r = requests.get('http://palea.cgrb.oregonstate.edu/services/PO_web_service.php?request_type=term_search&search_value=' + term + '&inc_synonyms&branch_filter=plant_anatomy&max=20&prioritize_exact_match')
     
     #print r.headers['Content-Type']
     #print r.text
