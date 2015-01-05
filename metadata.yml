@@ -1,7 +1,7 @@
 ---
 description: "Returns Plant Ontology term search web service results for a given term or term fragment, using the generic type of Araport web service"
 main_module: main.py
-name: PO_term_search
+name: po_term_search
 type: generic
 url: "http://www.plantontology.org/"
 version: 0.1
