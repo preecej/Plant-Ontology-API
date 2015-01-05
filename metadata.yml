@@ -7,3 +7,4 @@ url: "http://www.plantontology.org/"
 version: 0.1
 whitelist:
   - www.plantontology.org
+  - palea.cgrb.oregonstate.edu
