@@ -1,9 +1,9 @@
 ---
-description: "Returns MapMan bin information for a given AGI locus identifier using the generic type of Araport web service"
-main_module: generic_demo/main.py
-name: generic_mapman_bin_by_locus
+description: "Returns Plant Ontology term search web service results for a given term or term fragment, using the generic type of Araport web service"
+main_module: main.py
+name: PO_term_search
 type: generic
-url: "http://www.gabipd.org/"
+url: "http://www.plantontology.org/"
 version: 0.1
 whitelist:
-  - www.gabipd.org
+  - www.plantontology.org
